@@ -1,0 +1,116 @@
+<!-------------- navbar------------------->
+
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h3>My Reservations</h3>
+    <div class="d-flex">
+
+      <button (click)="clickAddResto()" type="button" class="btn btn-success" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        Add
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Record form</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label class="form-label">Name</label>
+                  <input type="text" formControlName="name" class="form-control" placeholder="Hotel Name"
+                    id="exampleInputEmail">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">email</label>
+                  <input type="" formControlName="email" class="form-control" placeholder="Enter email"
+                    id="exampleInputPassword">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">mobile</label>
+                  <input type="email" formControlName="mobile" class="form-control" placeholder="Enter mobile"
+                    id="exampleInputEmail">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Address</label>
+                  <input type="password" formControlName="Address" class="form-control" placeholder="Enter Address"
+                    id="exampleInputPassword">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Services</label>
+                  <input type="email" formControlName="Services" class="form-control" placeholder="Enter Services"
+                    id="exampleInputEmail">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="clear" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+              <button type="button" *ngIf="showAdd" class="btn btn-primary" (click)="addResto()">Add Detials</button>
+              <button type="button" *ngIf="showbtn" class="btn btn-primary" (click)="updateResto()">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!----------------------Table------------------------->
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Restaurent Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email </th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Address</th>
+      <th scope="col">Services</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <tr *ngFor="let data of allRestaurantData">
+
+      <td>{{data.id}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.mobile}}</td>
+      <td>{{data.Address}}</td>
+      <td>{{data.Services}}</td>
+
+      <td>
+        <button (click)="EditResto(data)" type="button" class="btn btn-success" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Edit</button>
+        <button (click)="deleteResto(data)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<!-----
+<div class="wrapper">
+  <button class="btn btn-primary" (click)="openpopup()">Popup</button>
+</div>
+<---
+
+<div class="overlay"  *ngIf="show" (click)="closeoverlay($event)">
+  <div class="content">
+      <div class="close" (click)="closepopup()">
+          &times;
+      </div>
+      username:<input type="text" class="form-control">
+      username:<input type="text" class="form-control">
+      <button class="btn btn-primary mt-4"> sign in </button>
+  </div>
+</div>
+
+---->
