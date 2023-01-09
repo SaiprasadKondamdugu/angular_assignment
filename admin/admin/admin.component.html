@@ -1,0 +1,24 @@
+<div>
+    <div>
+    </div>
+    <button (click)="getStudentsData()">{{viewHideButton}}</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Student ID</th>
+                <th>Branch</th>
+                <th>College Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.name}}</td>
+                <td>{{student.studentID}}</td>
+                <td>{{student.branch}}</td>
+                <td>{{student.collegeName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,30 @@
+
+<div class="container-fluid mt-3">
+    <div>
+        <input type="text" [(ngModel)]="search">
+        <button type="search" (click)="searchData()">Search Here</button>
+        <p>{{search}}</p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Student ID</th>
+                <th>Branch</th>
+                <th>College Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of searchedResults">
+                <td>{{student.name}}</td>
+                <td>{{student.studentID}}</td>
+                <td>{{student.branch}}</td>
+                <td>{{student.collegeName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- routerLink="student" -->
+<!-- <router-outlet></router-outlet> -->

@@ -1,0 +1,24 @@
+.login-container{
+    width: 30%;
+    margin: 10em auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2em;
+    border: 1px solid #fd8802;
+    border-radius: 20px;
+}
+
+.form-floating{
+    margin-bottom: 2em;
+}
+
+.forgot{
+    float: right;
+    text-decoration: none;
+}
+
+.register{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    margin: 1.3em;
+}
